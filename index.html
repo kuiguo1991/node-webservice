@@ -15,10 +15,10 @@
             type:"get",
             dataType:"json",
             success:function(res){
+                var res=res.data;
                 var data=[];
                 for(var i = 0;i<res.length;i++){
                     var arr=res[i].split(",")
-                    console.log(arr)
                     data.push({
                         "name":arr[0],
                         "number":arr[1]

@@ -27,7 +27,12 @@ app.all('*', function(req, res, next) {
 app.get('/api', function (req, res) {
     soap.createClient(url,'utf8',function(err,client){
         client.getRegionProvince(function(err,result){
-            var data = JSON.stringify(result.getRegionProvinceResult.string)
+            // var data = JSON.stringify(result.getRegionProvinceResult.string)
+            var data =JSON.stringify({
+                "code": 0,
+                "msg": "请求成功",
+                "data": result.getRegionProvinceResult.string
+            })
             console.log(data);
             res.end( data );
     
