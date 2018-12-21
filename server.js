@@ -38,7 +38,7 @@ app.get('/v2/api', function (req, res) {
             var data =JSON.stringify({
                 "code": 0,
                 "msg": "请求成功",
-                "data": dd
+                "result": dd
             })
             // console.log(data);
             res.end( data );
