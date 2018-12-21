@@ -27,13 +27,21 @@ app.all('*', function(req, res, next) {
 app.get('/api', function (req, res) {
     soap.createClient(url,'utf8',function(err,client){
         client.getRegionProvince(function(err,result){
-            // var data = JSON.stringify(result.getRegionProvinceResult.string)
+            var d = result.getRegionProvinceResult.string;
+            var dd=[];
+            for(var i = 0;i<d.length;i++){
+                var arr = d[i].split(",");
+                dd.push({
+                    "name": arr[0],
+                    "number": arr[1]
+                })
+            }
             var data =JSON.stringify({
                 "code": 0,
                 "msg": "请求成功",
-                "data": result.getRegionProvinceResult.string
+                "data": dd
             })
-            console.log(data);
+            // console.log(data);
             res.end( data );
     
         });
