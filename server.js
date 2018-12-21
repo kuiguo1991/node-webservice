@@ -7,8 +7,7 @@ var express = require('express');
 var app = express();
 var soap = require('soap');
 var hostName = '127.0.0.1'; //ip
-var port = 8888; //端口
-
+var port = 7552; //
 var url = 'http://ws.webxml.com.cn/WebServices/WeatherWS.asmx?wsdl';
 
 app.all('*', function(req, res, next) {
@@ -24,7 +23,7 @@ app.all('*', function(req, res, next) {
         next();
       }
 });
-app.get('/api', function (req, res) {
+app.get('/v2/api', function (req, res) {
     soap.createClient(url,'utf8',function(err,client){
         client.getRegionProvince(function(err,result){
             var d = result.getRegionProvinceResult.string;
@@ -51,7 +50,7 @@ app.get('/api', function (req, res) {
 
 app.listen(port,hostName,function () {
 
-    console.log(`服务器运行在http://${hostName}:${port}/api`);
+    console.log(`服务器运行在http://${hostName}:${port}/v2/api`);
   
   })
 
