@@ -30,9 +30,10 @@ app.get('/v2/api', function (req, res) {
             var dd=[];
             for(var i = 0;i<d.length;i++){
                 var arr = d[i].split(",");
+                var number = Math.ceil(Math.random() * 100)
                 dd.push({
                     "name": arr[0],
-                    "number": Number(arr[1].slice(2))
+                    "number": number
                 })
             }
             var data =JSON.stringify({
@@ -41,7 +42,7 @@ app.get('/v2/api', function (req, res) {
                 "result": dd
             })
             // console.log(data);
-            res.end( data );
+            res.send( data );
     
         });
     });
