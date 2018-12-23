@@ -32,7 +32,7 @@ app.get('/v2/api', function (req, res) {
                 var arr = d[i].split(",");
                 dd.push({
                     "name": arr[0],
-                    "number": Number(arr[1])
+                    "number": Number(arr[1].slice(2))
                 })
             }
             var data =JSON.stringify({
