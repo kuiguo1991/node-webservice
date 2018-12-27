@@ -6,7 +6,7 @@
 var express = require('express');
 var app = express();
 var soap = require('soap');
-var hostName = '127.0.0.1'; //ip
+var hostName = "127.0.0.1"; //ip
 var port = 7553; //
 var url = 'http://www.webxml.com.cn/webservices/ChinaTVprogramWebService.asmx?wsdl';
 
