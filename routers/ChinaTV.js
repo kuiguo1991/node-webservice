@@ -20,7 +20,7 @@ router.get("/ChinaTV", function(req, res) {
     client.getAreaDataSet(function(err, result) {
       var d = result.getAreaDataSetResult.diffgram.Area.AreaList;
       var dd = [];
-      console.log(result.getAreaDataSetResult.diffgram.Area.AreaList);
+      // console.log(result.getAreaDataSetResult.diffgram.Area.AreaList);
       for (var i = 0; i < d.length; i++) {
         var number = Math.ceil(Math.random() * 100);
         dd.push({

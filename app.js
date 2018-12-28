@@ -8,7 +8,7 @@ const app = express();
 const ChinaTVRouter = require("./routers/ChinaTV");
 const WeatherRouter = require("./routers/Weather");
 const hostName = "127.0.0.1"; //ip
-const port = 7551; //
+const port = 8551; //
 
 
 app.all('*', function (req, res, next) {
