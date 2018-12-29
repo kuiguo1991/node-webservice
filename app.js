@@ -26,8 +26,8 @@ app.all('*', function (req, res, next) {
 });
 
 
-app.use("/wsdl", ChinaTVRouter);
-app.use("/wsdl", WeatherRouter);
+app.use("/wsdl/ChinaTV", ChinaTVRouter);
+app.use("/wsdl/Weather", WeatherRouter);
 
 app.listen(port, hostName, function () {
 
