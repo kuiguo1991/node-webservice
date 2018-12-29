@@ -14,7 +14,7 @@ var soap = require("soap");
 const url = "http://ws.webxml.com.cn/WebServices/WeatherWS.asmx?wsdl";
 
 
-router.get("/", function(req, res) {
+router.get("/Weather", function(req, res) {
   soap.createClient(url, "utf8", function(err, client) {
     client.getRegionProvince(function(err, result) {
       var d = result.getRegionProvinceResult.string;
