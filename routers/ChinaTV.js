@@ -14,7 +14,7 @@ var soap = require("soap");
 const url = "http://www.webxml.com.cn/webservices/ChinaTVprogramWebService.asmx?wsdl";
 
 
-router.get("/ChinaTV", function(req, res) {
+router.get("/", function(req, res) {
   // res.send('hello, express')
   soap.createClient(url, "utf8", function(err, client) {
     client.getAreaDataSet(function(err, result) {
