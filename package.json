@@ -50,7 +50,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "pm": "pm2 start app.js --watch"
+    "pm": "pm2 start app.js"
   },
   "author": "",
   "license": "ISC",
