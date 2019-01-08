@@ -18,7 +18,7 @@ app.all('*', function (req, res, next) {
     res.header('X-Powered-By', 'nodejs'); //自定义头信息，表示服务端用nodejs
     res.header('Content-Type', 'application/json;charset=utf-8');
     if (req.method == 'OPTIONS') {
-        res.send(200);
+        res.sendStatus(200); 
         /让options请求快速返回/
     } else {
         next();
