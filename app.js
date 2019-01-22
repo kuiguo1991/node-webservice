@@ -5,6 +5,10 @@
  */
 const express = require('express');
 const app = express();
+
+var bodyParser = require("body-parser");
+// var multer = require("multer"); 
+
 const ChinaTVRouter = require("./routers/ChinaTV");
 const WeatherRouter = require("./routers/Weather");
 const hostName = "127.0.0.1"; //ip
@@ -25,6 +29,10 @@ app.all('*', function (req, res, next) {
     }
 });
 
+
+app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({ extended: true })); 
+// app.use(multer()); 
 
 app.use("/wsdl/ChinaTV", ChinaTVRouter);
 app.use("/wsdl/Weather", WeatherRouter);
