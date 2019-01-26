@@ -1,2 +1,2 @@
 @echo off
-pm2 start E:\git\node-login\app.js E:\git\node-webservice\app.js E:\git\ReactTraining\server\app.js E:\git\ygVueTraining\server\app.js
+pm2 start D:\github\node-login\app.js D:\github\node-webservice\app.js D:\github\ReactTraining\server\app.js D:\github\ygVueTraining\server\app.js
