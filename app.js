@@ -7,10 +7,11 @@ const express = require('express');
 const app = express();
 
 var bodyParser = require("body-parser");
-// var multer = require("multer"); 
+// var multer = require("multer");
 
-const ChinaTVRouter = require("./routers/ChinaTV");
-const WeatherRouter = require("./routers/Weather");
+// const ChinaTVRouter = require("./routers/ChinaTV");
+// const WeatherRouter = require("./routers/Weather");
+const wsdlRouter = require("./routers/index");
 const hostName = "127.0.0.1"; //ip
 const port = 8551; //
 
@@ -22,7 +23,7 @@ app.all('*', function (req, res, next) {
     res.header('X-Powered-By', 'nodejs'); //自定义头信息，表示服务端用nodejs
     res.header('Content-Type', 'application/json;charset=utf-8');
     if (req.method == 'OPTIONS') {
-        res.sendStatus(200); 
+        res.sendStatus(200);
         /让options请求快速返回/
     } else {
         next();
@@ -30,12 +31,13 @@ app.all('*', function (req, res, next) {
 });
 
 
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true })); 
-// app.use(multer()); 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(multer());
 
-app.use("/wsdl/ChinaTV", ChinaTVRouter);
-app.use("/wsdl/Weather", WeatherRouter);
+// app.use("/wsdl/ChinaTV", ChinaTVRouter);
+// app.use("/wsdl/Weather", WeatherRouter);
+app.use("/wsdl", wsdlRouter);
 
 app.listen(port, hostName, function () {
 
