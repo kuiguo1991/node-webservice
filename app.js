@@ -9,8 +9,8 @@ const app = express();
 var bodyParser = require("body-parser");
 
 const wsdlRouter = require("./routers/index");
-const hostName = "127.0.0.1"; //ip
-const port = 8551; //
+// const hostName = "127.0.0.1"; //ip
+// const port = 8551; //
 
 
 app.all('*', function (req, res, next) {
@@ -33,8 +33,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/wsdl", wsdlRouter);
 
-app.listen(port, hostName, function () {
+app.listen(8551,function () {
 
-    console.log(`服务器运行在http://${hostName}:${port}/`);
+    // console.log(`服务器运行在http://${hostName}:${port}/`);
+    console.log("正在监听端口5551,http://localhost:8551/wsdl");
 
 })
