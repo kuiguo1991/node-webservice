@@ -51,7 +51,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "pm": "pm2 start app.js"
+    "pm": "pm2 start app.js",
+    "apidoc":"apidoc -i routers/ -o apidoc/"
   },
   "author": "",
   "license": "ISC",
